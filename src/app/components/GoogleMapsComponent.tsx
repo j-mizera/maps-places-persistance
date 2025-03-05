@@ -9,7 +9,7 @@ const containerStyle = {
   height: "400px",
 };
 
-const center = { lat: 37.7749, lng: -122.4194 };
+const center = { lat: 52.21446814267482, lng: 21.01696680080964 };
 
 const GoogleMapComponent = () => {
   const [markers, setMarkers] = useState<{ lat: number; lng: number; title: string; description: string }[]>([]);
@@ -99,10 +99,10 @@ const GoogleMapComponent = () => {
           ))}
 
           {selectedMarker && (
-            <InfoWindow position={{ lat: selectedMarker.lat, lng: selectedMarker.lng }} onCloseClick={() => setSelectedMarker(null)}>
-              <div>
-                <h3 className="font-bold">{selectedMarker.title}</h3>
-                <p>{selectedMarker.description}</p>
+           <InfoWindow position={{ lat: selectedMarker.lat, lng: selectedMarker.lng }} onCloseClick={() => setSelectedMarker(null)}>
+              <div className="bg-white p-3 rounded-lg shadow-lg max-w-xs">
+                <h3 className="text-l font-bold text-gray-800">{selectedMarker.title}</h3>
+                <p className="text-m text-gray-600">{selectedMarker.description}</p>
               </div>
             </InfoWindow>
           )}
